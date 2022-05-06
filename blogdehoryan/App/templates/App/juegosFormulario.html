@@ -1,0 +1,22 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+<!-- -->
+{% block titulo %}
+<H1 class="mx-auto my-0 text-uppercase">Juegos analizados </H1>                        
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> Joyitas y no tan joyitas que hemos probado  </h2>
+
+{% endblock %}
+
+<!-- -->
+{% block contenidoQueCambia %}
+<form action="{% url 'juegosformulario' %}" method="POST"> {% csrf_token %}
+
+    <table>
+        {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Ingresar nueva reseña de juego">
+
+</form>
+{% endblock %}

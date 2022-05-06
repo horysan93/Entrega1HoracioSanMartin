@@ -1,0 +1,25 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+<!-- -->
+{% block titulo %}
+<H1 class="mx-auto my-0 text-uppercase">Juegos analizados </H1>                        
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> Joyitas y no tan joyitas que hemos probado  </h2>
+
+{% endblock %}
+
+<!-- -->
+{% block contenidoQueCambia %}
+<body style="background-color:black"></body>
+    <form>
+        <a href="{% url 'busquedaReview' %}">
+            <input type="button"  value="busqueda reviews por categoria">
+        </a>
+
+        <a href="{% url 'juegosformulario' %}">
+            <input type="button" value="ingresar nuevas reviews">
+        </a>
+    </form>
+</body>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "App/padre.html" %}
+
+{%load static %}
+
+{% block contenidoQueCambia %}
+
+{% if not respuesta %}
+<body style="background-color:black">
+<h1 style="color:rgb(255, 255, 255)"> juegos analizados tipo: {{categoria}}</h1>
+
+    {% if juegos %}
+    <ul style="color:whitesmoke;">
+        {% for juego in juegos %}
+            <li>{{juego.nombre}}</li>
+            <li>Calificación: {{juego.calificacion}}</li>
+            <li> Reseña: {{juego.resena}}</li>
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+    {% else %}
+    <p style="color:red"> NO SE ENCONTRARON DATOS PARA ESA CATEGORIA </p>
+    {% endif %}
+
+{% else %}
+<H1 style="color:red">{{respuesta}} </H1>
+{% endif %}
+
+
+{% endblock %}
+
+{% block titulo %}
+<H1 class="mx-auto my-0 text-uppercase">Juegos analizados </H1>                        
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> Joyitas y no tan joyitas que hemos probado  </h2>
+{% endblock %}

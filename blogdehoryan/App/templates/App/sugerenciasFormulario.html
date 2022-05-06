@@ -1,0 +1,22 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+<!-- -->
+{% block titulo %}
+<H1 class="mx-auto my-0 text-uppercase"> Sugerencias de videojuegos </H1>                        
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> Aún no analizamos todo, así que recibimos tus sugerencias!  </h2>
+
+{% endblock %}
+
+<!-- -->
+{% block contenidoQueCambia %}
+<form action="{% url 'sugerenciasformulario' %}" method="POST"> {% csrf_token %}
+
+    <table>
+        {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Propon nuevo juego">
+
+</form>
+{% endblock %}
